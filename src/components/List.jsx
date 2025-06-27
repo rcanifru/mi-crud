@@ -1,19 +1,19 @@
-import React from "react";
+import React from 'react';
 import Item from './Item';
 
-function List({items, deleteItem, editItem}){
-    return(
-        <ul>
-            {items.map((item)=>(
-                <Item
-                key={item.id}
-                item={item}
-                deleteItem={deleteItem}
-                editItem={editItem}
-                />
-            ))}
-        </ul>
-    );
-};
+function List({ evaluaciones, eliminarEvaluacion, editarEvaluacion }) {
+  return (
+    <ul className="lista">
+      {evaluaciones.map(evaluacion => (
+        <Item
+          key={evaluacion.id}
+          evaluacion={evaluacion}
+          eliminarEvaluacion={eliminarEvaluacion}
+          editarEvaluacion={editarEvaluacion}
+        />
+      ))}
+    </ul>
+  );
+}
 
 export default List;

@@ -1,42 +1,159 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f4f6;
+  padding: 1rem;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.App {
+  width: 100%;
+  max-width: 600px;
+  background: white;
   padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #111;
+}
+
+/* Formulario */
+form.form {
+  width: 100%;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  background-color: white;
+  color: #333;
+}
+
+input::placeholder {
+  color: #888;
+}
+
+button {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.95;
+}
+
+form button {
+  background-color: #2563eb;
+  color: white;
+}
+
+.item {
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  color: #222;
+}
+
+.lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.etiqueta {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.3rem;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.etiqueta.destacado {
+  background-color: #007bff;
+  color: white;
+}
+
+.etiqueta.aceptable {
+  background-color: #ffc107;
+  color: black;
+}
+
+.etiqueta.insuficiente {
+  background-color: #dc3545;
+  color: white;
+}
+
+.acciones {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+button.editar {
+  background-color: #f0ad4e;
+  color: white;
+  flex: 1;
+}
+
+button.eliminar {
+  background-color: #d9534f;
+  color: white;
+  flex: 1;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 480px) {
+  .App {
+    padding: 1rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  form.form {
+    padding: 1rem;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  input, button, .item {
+    font-size: 1rem;
   }
-}
 
-.card {
-  padding: 2em;
-}
+  .acciones {
+    flex-direction: column;
+  }
 
-.read-the-docs {
-  color: #888;
+  button.editar, button.eliminar {
+    width: 100%;
+  }
 }
